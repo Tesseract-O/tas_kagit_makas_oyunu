@@ -1,0 +1,39 @@
+import random
+print(("-"*30) + "\nTaş,Kağıt,Makas\n" + "-"*30)
+
+kullanıcı_skoru, bilgisayar_skoru = 0, 0
+while True:
+    print("\n1 - Taş\n2 - Kağıt\n3 - Makas")
+    kullanıcı_secimi = input("Seçiminiz (1/2/3): ")
+    bilgisyara_secim = random.choice(["1","2","3"])
+
+    if kullanıcı_secimi == "1":
+        if bilgisyara_secim == "1":
+             print("Bilgisayarın seçimi: Taş \nBerabere")
+        elif bilgisyara_secim == "2":
+            print("Bilgisayarın seçimi: Kağıt \nBilgisayar kazandı.")
+            bilgisayar_skoru += 100
+        elif bilgisyara_secim == "3":
+            print("Bilgisayarın seçimi: Makas \nSen kazandın.")
+            kullanıcı_skoru += 100
+    elif kullanıcı_secimi == "2":
+        if bilgisyara_secim == "1":
+            print("Bilgisayarın seçimi: Taş \nSen kazandın.")
+            kullanıcı_skoru += 100
+        elif bilgisyara_secim == "2":
+            print("Bilgisayarın seçimi: Kağıt \nBerabere")
+        elif bilgisyara_secim == "3":
+            print("Bilgisayarın seçimi: Makas \nBilgisayar kazandı.")
+            bilgisayar_skoru += 100
+    elif kullanıcı_secimi == "3":
+        if bilgisyara_secim == "1":
+            print("Bilgisaayrın seçimi: Taş \nBilgisayar kazandı.")
+            bilgisayar_skoru += 100
+        elif bilgisyara_secim == "2":
+            print("Bilgisayarın seçimi: Kağıt \nSen kazandın.")
+            kullanıcı_skoru += 100
+        elif bilgisyara_secim == "3":
+            print("Bilgisayarın seçimi: Makas \nBerabere")
+    else:
+        break
+print("Senin skorun {} \nBilgisayarın skoru {}".format(kullanıcı_skoru,bilgisayar_skoru))
